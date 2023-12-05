@@ -370,6 +370,12 @@ func PrivateRoutes(
 			Handler: transactionHandler.CreateOrder,
 			Role:    allRoles,
 		},
+		{
+			Method:  echo.GET,
+			Path:    "/transactions/history",
+			Handler: transactionHandler.HistoryTransaction,
+			Role:    allRoles,
+		},
 		// {
 		// 	Method:  http.MethodPost,
 		// 	Path:    "/diagnostic-ai",

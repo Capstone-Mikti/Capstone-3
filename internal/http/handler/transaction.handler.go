@@ -102,3 +102,17 @@ func (h *TransactionHandler) WebHookTransaction(ctx echo.Context) error {
 
 	return ctx.JSON(http.StatusOK, map[string]string{"message": "success"})
 }
+
+// history transaction
+func (h *TransactionHandler) HistoryTransaction(ctx echo.Context) error {
+	dataUser, _ := ctx.Get("user").(*jwt.Token)
+	claims := dataUser.Claims.(*common.JwtCustomClaims)
+
+	transactions, err := h.transactionService.FindByUserID(ctx.Request().Context(), claims.ID)
+
+	if err != nil {
+		return ctx.JSON(http.StatusUnprocessableEntity, err.Error())
+	}
+
+	return ctx.JSON(http.StatusOK, transactions)
+}

@@ -45,3 +45,12 @@ func (r *TransactionRepository) UpdateStatus(ctx context.Context, orderID string
 	}
 	return nil
 }
+
+// HistoryTransaction
+func (r *TransactionRepository) HistoryTransaction(ctx context.Context, userID int64) ([]*entity.Transaction, error) {
+	transactions := make([]*entity.Transaction, 0)
+	if err := r.db.WithContext(ctx).Where("user_id = ?", userID).Find(&transactions).Error; err != nil {
+		return nil, err
+	}
+	return transactions, nil
+}
