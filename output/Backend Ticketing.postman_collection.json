@@ -1728,6 +1728,161 @@
 									"body": "{\n    \"error\": \"Midtrans API is returning API error. HTTP status code: 401 API response: {\\\"status_code\\\":\\\"401\\\",\\\"status_message\\\":\\\"Unknown Merchant server_key/id\\\",\\\"id\\\":\\\"8cc092fc-f1eb-4d4e-9f03-f9b1b29c094d\\\"}: Midtrans API is returning API error. HTTP status code: 401 API response: {\\\"status_code\\\":\\\"401\\\",\\\"status_message\\\":\\\"Unknown Merchant server_key/id\\\",\\\"id\\\":\\\"8cc092fc-f1eb-4d4e-9f03-f9b1b29c094d\\\"}\"\n}"
 								}
 							]
+						},
+						{
+							"name": "History TopUP",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/transactions/history",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions",
+										"history"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "History TopUP",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/transactions/history",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions",
+												"history"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 17:07:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "140"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"ID\": 1,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 10000,\n        \"Status\": \"paid\"\n    },\n    {\n        \"ID\": 2,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 50000,\n        \"Status\": \"paid\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "midtrans",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/transactions",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								},
+								"description": "**INI GATAU**"
+							},
+							"response": [
+								{
+									"name": "midtrans",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"order_id\": \"topup\",\r\n\t\"amount\": 50000\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/transactions",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 16:29:17 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"url_pembayaran\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/17f57236-6ef2-4deb-a044-e4724a5c291e\"\n}"
+								}
+							]
 						}
 					],
 					"description": "Folder ini berfungsi ketika admin ingin menambahkan saldo pada akun yang saldo nya ingin ditambahkan."
@@ -3437,120 +3592,96 @@
 					"name": "Topup Saldo",
 					"item": [
 						{
-							"name": "Topup Saldo",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Token-Buyer}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"topup123\",\r\n    \"user_id\": 1,\r\n    \"amount\": 10000,\r\n    \"status\": 0\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/topup",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"topup"
-									]
-								},
-								"description": "endpoin ini digunakan ketika pembeli ingin melakukan top up saldo."
-							},
-							"response": []
-						},
-						{
-							"name": "User Topup",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Token-Buyer}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"amount\": 1000 \r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{URL}}/user/topup",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"user",
-										"topup"
-									]
-								},
-								"description": "**INI BELUM TAU FUNGSI NYA.**"
-							},
-							"response": []
-						},
-						{
-							"name": "Topup Saldo",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Token-Buyer}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"saldo\" : 1000\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{URL}}/user/upgrade",
-									"host": [
-										"{{URL}}"
-									],
-									"path": [
-										"user",
-										"upgrade"
-									]
-								},
-								"description": "endpoint ini berfungsi untuk melakukan upgrade pada saldo yang dimiliki oleh pembeli."
-							},
-							"response": [
+							"name": "Manual Topup",
+							"item": [
 								{
-									"name": "topup sederhana",
-									"originalRequest": {
+									"name": "Topup Saldo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"topup123\",\r\n    \"user_id\": 1,\r\n    \"amount\": 10000,\r\n    \"status\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/topup",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"topup"
+											]
+										},
+										"description": "endpoin ini digunakan ketika pembeli ingin melakukan top up saldo."
+									},
+									"response": []
+								},
+								{
+									"name": "User Topup",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"amount\": 1000 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/user/topup",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"user",
+												"topup"
+											]
+										},
+										"description": "**INI BELUM TAU FUNGSI NYA.**"
+									},
+									"response": []
+								},
+								{
+									"name": "Topup Saldo",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token-Buyer}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -3571,31 +3702,60 @@
 												"user",
 												"upgrade"
 											]
-										}
+										},
+										"description": "endpoint ini berfungsi untuk melakukan upgrade pada saldo yang dimiliki oleh pembeli."
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
+									"response": [
 										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 04 Dec 2023 19:50:33 GMT"
-										},
-										{
-											"key": "Content-Length",
-											"value": "46"
+											"name": "topup sederhana",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"saldo\" : 1000\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/user/upgrade",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"user",
+														"upgrade"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=UTF-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 04 Dec 2023 19:50:33 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "46"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"success\": \"successfully updated user saldo\"\n}"
 										}
-									],
-									"cookie": [],
-									"body": "{\n    \"success\": \"successfully updated user saldo\"\n}"
+									]
 								}
 							]
 						},
@@ -3752,6 +3912,75 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"url_pembayaran\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/17f57236-6ef2-4deb-a044-e4724a5c291e\"\n}"
+								}
+							]
+						},
+						{
+							"name": "History TopUP",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token-Buyer}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/transactions/history",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"transactions",
+										"history"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "History TopUP",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{URL}}/transactions/history",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"transactions",
+												"history"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 17:07:13 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "140"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"ID\": 1,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 10000,\n        \"Status\": \"paid\"\n    },\n    {\n        \"ID\": 2,\n        \"OrderID\": \"topup\",\n        \"UserID\": 1,\n        \"Amount\": 50000,\n        \"Status\": \"paid\"\n    }\n]"
 								}
 							]
 						}
