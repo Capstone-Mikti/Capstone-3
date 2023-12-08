@@ -424,7 +424,8 @@
 										"user",
 										"logout"
 									]
-								}
+								},
+								"description": "Endpoint ini digunakan untuk melakukan logout ketika sudah tidak ingin menggunakan program atau aplikasi tersebut."
 							},
 							"response": [
 								{
@@ -1753,7 +1754,8 @@
 										"transactions",
 										"history"
 									]
-								}
+								},
+								"description": "Endpoint ini digunakan untuk melakukan cek atau melihat history top up yang dilakukan oleh admin."
 							},
 							"response": [
 								{
@@ -1831,7 +1833,7 @@
 										"transactions"
 									]
 								},
-								"description": "**INI GATAU**"
+								"description": "**Endpoin ini digunakan untuk top up saldo menggunakan midtrans**\n\nMASIH BELUM PASTI"
 							},
 							"response": [
 								{
@@ -3665,7 +3667,7 @@
 												"topup"
 											]
 										},
-										"description": "**INI BELUM TAU FUNGSI NYA.**"
+										"description": "ini untuk topup manual tidak menggunakan midtrans jadi si user bisa menambahkan saldo menggunakan jwt untuk mendeketsi id nya kemudian menambahkan saldo nya"
 									},
 									"response": []
 								},
@@ -3757,7 +3759,8 @@
 										}
 									]
 								}
-							]
+							],
+							"description": "Folder untuk top up dari sisi user atau pembeli tanpa menggunakan midtrans."
 						},
 						{
 							"name": "Cek Saldo",
@@ -3862,7 +3865,7 @@
 										"transactions"
 									]
 								},
-								"description": "**INI GATAU**"
+								"description": "endpoint topup menggunakan midtrans"
 							},
 							"response": [
 								{
@@ -3939,7 +3942,8 @@
 										"transactions",
 										"history"
 									]
-								}
+								},
+								"description": "Endpoint ini berfungsi untuk melihat history top up menggunakan midtrans."
 							},
 							"response": [
 								{
