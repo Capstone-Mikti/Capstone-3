@@ -58,6 +58,7 @@ Proyek ini akan berlangsung selama 2 sprint (2 minggu) dengan penilaian secara b
 <!-- add picture readme md -->
 ![Figma](https://raw.githubusercontent.com/Capstone-Mikti/Capstone-3/main/Materi/flow%201.png)
 ![Figma](https://raw.githubusercontent.com/Capstone-Mikti/Capstone-3/main/Materi/flow%202.png)
+![ERD](https://raw.githubusercontent.com/Capstone-Mikti/Capstone-3/main/Materi/erd.jpg)
 
 
 <!-- add link url -->
