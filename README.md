@@ -4,8 +4,8 @@ By : Golang - Kelompok 3
 Anggota :
 - [x] [Rio]
 - [x] [Reza]
-- [x] [Rahma]
 - [x] [Ravita]
+- [x] [Rahma]
 - [x] [Sandhya]
 
 Dalam proyek capstone ini, tujuan utamanya adalah untuk memberikan pengalaman baru kepada peserta, serta mengimplementasikan Metode Scrum dalam pengembangan produk digital. Proyek ini akan dilakukan dalam bentuk kelompok dan fokus pada pengembangan bagian Back End.

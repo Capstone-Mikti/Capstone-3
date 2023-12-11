@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "475ee4c6-91f3-44de-bd51-5cdc49298a10",
+		"_postman_id": "5d86b314-1544-438b-a2a6-5a7179ccb076",
 		"name": "Backend Ticketing",
 		"description": "Documentation API untuk program aplikasi pembayaran tiket menggunakan bahasa Go",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26142588",
-		"_collection_link": "https://ticketing-mikti.postman.co/workspace/Ticketing-Workspace~1c7b0ec0-f35f-4273-b1d6-67507ad4c237/collection/26142588-475ee4c6-91f3-44de-bd51-5cdc49298a10?action=share&source=collection_link&creator=26142588"
+		"_collection_link": "https://ticketing-mikti.postman.co/workspace/Ticketing-Workspace~1c7b0ec0-f35f-4273-b1d6-67507ad4c237/collection/30169354-5d86b314-1544-438b-a2a6-5a7179ccb076?action=share&source=collection_link&creator=26142588"
 	},
 	"item": [
 		{
@@ -424,8 +424,7 @@
 										"user",
 										"logout"
 									]
-								},
-								"description": "Endpoint ini digunakan untuk melakukan logout ketika sudah tidak ingin menggunakan program atau aplikasi tersebut."
+								}
 							},
 							"response": [
 								{
@@ -1754,8 +1753,7 @@
 										"transactions",
 										"history"
 									]
-								},
-								"description": "Endpoint ini digunakan untuk melakukan cek atau melihat history top up yang dilakukan oleh admin."
+								}
 							},
 							"response": [
 								{
@@ -1833,7 +1831,7 @@
 										"transactions"
 									]
 								},
-								"description": "**Endpoin ini digunakan untuk top up saldo menggunakan midtrans**\n\nMASIH BELUM PASTI"
+								"description": "**INI GATAU**"
 							},
 							"response": [
 								{
@@ -3667,7 +3665,7 @@
 												"topup"
 											]
 										},
-										"description": "ini untuk topup manual tidak menggunakan midtrans jadi si user bisa menambahkan saldo menggunakan jwt untuk mendeketsi id nya kemudian menambahkan saldo nya"
+										"description": "**INI BELUM TAU FUNGSI NYA.**"
 									},
 									"response": []
 								},
@@ -3759,8 +3757,7 @@
 										}
 									]
 								}
-							],
-							"description": "Folder untuk top up dari sisi user atau pembeli tanpa menggunakan midtrans."
+							]
 						},
 						{
 							"name": "Cek Saldo",
@@ -3865,7 +3862,7 @@
 										"transactions"
 									]
 								},
-								"description": "endpoint topup menggunakan midtrans"
+								"description": "**INI GATAU**"
 							},
 							"response": [
 								{
@@ -3942,8 +3939,7 @@
 										"transactions",
 										"history"
 									]
-								},
-								"description": "Endpoint ini berfungsi untuk melihat history top up menggunakan midtrans."
+								}
 							},
 							"response": [
 								{
@@ -4861,9 +4857,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/login",
+							"raw": "{{URL}}/login",
 							"host": [
-								"{{url}}"
+								"{{URL}}"
 							],
 							"path": [
 								"login"
